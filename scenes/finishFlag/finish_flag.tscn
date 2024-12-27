@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://caotij8nbv5gk"]
+
+[ext_resource type="Script" path="res://scripts/finish_flag.gd" id="1_p83gh"]
+[ext_resource type="Texture2D" uid="uid://dt2idpjno1suf" path="res://assets/kenney_abstract-platformer/PNG/Other/flagGreen_up.png" id="1_w01lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32j07"]
+size = Vector2(65, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ce4oi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w01lf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="finish_flag" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_p83gh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_32j07")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ce4oi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

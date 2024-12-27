@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dce26luqamex2"]
+
+[ext_resource type="Script" path="res://scenes/gems/gem.gd" id="1_yyv65"]
+[ext_resource type="Texture2D" uid="uid://bbh27funqeit3" path="res://assets/kenney_abstract-platformer/PNG/Items/blueJewel.png" id="2_7ak18"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rrjcl"]
+radius = 28.0179
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6tig5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ak18")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="gem" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_yyv65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 8)
+shape = SubResource("CircleShape2D_rrjcl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(11.25, 8.25)
+scale = Vector2(2.3125, 2.15909)
+sprite_frames = SubResource("SpriteFrames_6tig5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://def8uxflupfgh"]
+
+[ext_resource type="Texture2D" uid="uid://bbh27funqeit3" path="res://assets/kenney_abstract-platformer/PNG/Items/blueJewel.png" id="1_dn3mt"]
+[ext_resource type="Script" path="res://scripts/finish_popup.gd" id="1_g6ktp"]
+
+[node name="finish_popup" type="CanvasLayer"]
+script = ExtResource("1_g6ktp")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 331.0
+offset_top = 153.0
+offset_right = 840.0
+offset_bottom = 419.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 529.0
+offset_top = 166.0
+offset_right = 648.0
+offset_bottom = 189.0
+text = "Level Summary"
+
+[node name="NextLevel" type="Button" parent="."]
+offset_left = 541.0
+offset_top = 334.0
+offset_right = 626.0
+offset_bottom = 365.0
+rotation = 0.00558058
+text = "NextLevel"
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 556.0
+offset_top = 373.0
+offset_right = 606.0
+offset_bottom = 404.0
+text = "Retry"
+
+[node name="Gem1" type="TextureRect" parent="."]
+offset_left = 392.0
+offset_top = 221.0
+offset_right = 473.0
+offset_bottom = 299.0
+texture = ExtResource("1_dn3mt")
+
+[node name="Gem2" type="TextureRect" parent="."]
+offset_left = 542.0
+offset_top = 221.0
+offset_right = 623.0
+offset_bottom = 299.0
+texture = ExtResource("1_dn3mt")
+
+[node name="Gem3" type="TextureRect" parent="."]
+offset_left = 700.0
+offset_top = 223.0
+offset_right = 781.0
+offset_bottom = 301.0
+texture = ExtResource("1_dn3mt")
+
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

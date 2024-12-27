@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk36r2c4myw4j"]
+
+[ext_resource type="Script" path="res://scenes/GemHUD/HUD.gd" id="1_nqce6"]
+[ext_resource type="Texture2D" uid="uid://bbh27funqeit3" path="res://assets/kenney_abstract-platformer/PNG/Items/blueJewel.png" id="2_6p863"]
+[ext_resource type="FontFile" uid="uid://biuug17qhmcmw" path="res://resources/fonts/BalsamiqSans-Bold.ttf" id="3_gq1q1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6doen"]
+bg_color = Color(0, 0, 0, 0.196078)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="FontVariation" id="FontVariation_ildqf"]
+base_font = ExtResource("3_gq1q1")
+
+[sub_resource type="FontVariation" id="FontVariation_cbabh"]
+base_font = ExtResource("3_gq1q1")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_nqce6")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 44.0
+offset_top = 19.0
+offset_right = 163.0
+offset_bottom = 67.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6doen")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 54.0
+offset_top = 28.0
+offset_right = 88.0
+offset_bottom = 59.0
+texture = ExtResource("2_6p863")
+expand_mode = 1
+
+[node name="x" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 32.0
+offset_right = 133.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.254902, 0.886275, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_ildqf")
+theme_override_font_sizes/font_size = 20
+text = "x"
+
+[node name="Gems" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 27.0
+offset_right = 157.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.254902, 0.886275, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_cbabh")
+theme_override_font_sizes/font_size = 30
+text = "##"

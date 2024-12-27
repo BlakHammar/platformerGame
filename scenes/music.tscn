@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdvlhswbu8sm0"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_8jvke"]
+[ext_resource type="AudioStream" uid="uid://cuq5of52frsdk" path="res://assets/Feel-Good(chosic.com).mp3" id="1_ndala"]
+[ext_resource type="AudioStream" uid="uid://mminatqjdf4" path="res://assets/Powerful(chosic.com).mp3" id="2_6q4w5"]
+[ext_resource type="AudioStream" uid="uid://bvgavqtgthhiw" path="res://assets/the-epic-2-by-rafael-krux(chosic.com).mp3" id="4_3ugwx"]
+[ext_resource type="AudioStream" uid="uid://dw8sc3o4vjdb3" path="res://assets/Sakura-Girl-Daisy-chosic.com_.mp3" id="5_ik8ji"]
+
+[node name="music" type="Node"]
+script = ExtResource("1_8jvke")
+
+[node name="upbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ndala")
+autoplay = true
+
+[node name="powerful" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6q4w5")
+
+[node name="epic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3ugwx")
+
+[node name="daisy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ik8ji")

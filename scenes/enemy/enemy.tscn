@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://dj0uo46dypyqq"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_3qd6o"]
+[ext_resource type="Texture2D" uid="uid://b06o7vvp0o2ej" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_hit.png" id="1_7igtt"]
+[ext_resource type="Texture2D" uid="uid://cr1vs01w13wjj" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_dead.png" id="2_c3cy6"]
+[ext_resource type="Texture2D" uid="uid://b8656yh4r5381" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_walk1.png" id="3_k4ee0"]
+[ext_resource type="Texture2D" uid="uid://c8io760f11ymr" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_walk2.png" id="4_xj66g"]
+[ext_resource type="Texture2D" uid="uid://b1ko52xwwypi6" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_walk3.png" id="5_84np0"]
+[ext_resource type="Texture2D" uid="uid://brjlh0ul67kbr" path="res://assets/kenney_abstract-platformer/PNG/Players/Player Red/playerRed_walk4.png" id="6_06xs3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bs33u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7igtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c3cy6")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c3cy6")
+}],
+"loop": true,
+"name": &"squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k4ee0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xj66g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_84np0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_06xs3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_va1ui"]
+size = Vector2(55, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27a8e"]
+size = Vector2(37, 10)
+
+[node name="enemy" type="CharacterBody2D"]
+position = Vector2(-2, 0)
+collision_layer = 4
+collision_mask = 35
+script = ExtResource("1_3qd6o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bs33u")
+animation = &"walk"
+frame_progress = 0.258128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_va1ui")
+
+[node name="top_check" type="Area2D" parent="."]
+position = Vector2(0, 3)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top_check"]
+position = Vector2(0.5, -22)
+shape = SubResource("RectangleShape2D_27a8e")
+
+[node name="floor_check" type="RayCast2D" parent="."]
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="KickTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[connection signal="body_entered" from="top_check" to="." method="_on_top_check_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="KickTimer" to="." method="_on_kick_timer_timeout"]

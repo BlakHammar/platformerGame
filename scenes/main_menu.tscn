@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://btk0l0msxlpox"]
+
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="1_xvnxy"]
+[ext_resource type="Texture2D" uid="uid://crgluv5il4vka" path="res://resources/images/menubackground.png" id="2_lhui7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7b0n"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uetii"]
+bg_color = Color(0, 0, 0, 0.490196)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6evu"]
+bg_color = Color(0, 0, 0, 0.686275)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_xvnxy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 327)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lhui7")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_top = 5.0
+offset_right = 1152.0
+offset_bottom = 653.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Elemental Platformer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_right = 350
+
+[node name="Start Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u7b0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uetii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b6evu")
+text = "Start"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_right = 350
+
+[node name="Load Level Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u7b0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uetii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b6evu")
+text = "Load Level"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_right = 350
+
+[node name="Quit Button" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_u7b0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uetii")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b6evu")
+text = "Quit"
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Start Button" to="." method="on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/Start Button" to="." method="on_start_pressed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/Load Level Button" to="." method="on_load_level_pressed"]

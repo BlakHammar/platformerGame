@@ -1,0 +1,169 @@
+[gd_scene load_steps=4 format=3 uid="uid://cad3eycm8o38y"]
+
+[ext_resource type="Texture2D" uid="uid://cgo64jcwannlm" path="res://assets/kenney_abstract-platformer/PNG/Backgrounds/set2_background.png" id="1_8n4yn"]
+[ext_resource type="Texture2D" uid="uid://bwf1uteu38v6f" path="res://assets/kenney_abstract-platformer/PNG/Backgrounds/set2_tiles.png" id="2_ub0tn"]
+[ext_resource type="Texture2D" uid="uid://b8b2h8omkkbir" path="res://assets/kenney_abstract-platformer/PNG/Backgrounds/set2_hills.png" id="3_rx8m4"]
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Node2D"]
+
+[node name="Background" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+position = Vector2(-1, 0)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Background"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Background/Control"]
+layout_mode = 1
+offset_top = -284.0
+offset_right = 4488.0
+offset_bottom = 1010.0
+size_flags_vertical = 0
+texture = ExtResource("1_8n4yn")
+
+[node name="Tiles" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Tiles"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Tiles/Control"]
+layout_mode = 1
+offset_right = 640.0
+offset_bottom = 481.0
+size_flags_vertical = 0
+texture = ExtResource("2_ub0tn")
+
+[node name="Tiles2" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Tiles2"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Tiles2/Control"]
+layout_mode = 1
+offset_left = 1247.0
+offset_top = 4.0
+offset_right = 1955.0
+offset_bottom = 484.0
+size_flags_vertical = 0
+texture = ExtResource("2_ub0tn")
+
+[node name="Tiles3" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Tiles3"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Tiles3/Control"]
+layout_mode = 1
+offset_left = 2560.0
+offset_right = 3222.0
+offset_bottom = 481.0
+size_flags_vertical = 0
+texture = ExtResource("2_ub0tn")
+
+[node name="Tiles4" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Tiles4"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Tiles4/Control"]
+layout_mode = 1
+offset_left = 3832.78
+offset_top = 7.40741
+offset_right = 4490.78
+offset_bottom = 487.407
+size_flags_vertical = 0
+texture = ExtResource("2_ub0tn")
+
+[node name="Hills" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Hills"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Hills/Control"]
+layout_mode = 1
+offset_left = 2.77778
+offset_top = 3.7037
+offset_right = 642.778
+offset_bottom = 720.704
+size_flags_vertical = 0
+texture = ExtResource("3_rx8m4")
+
+[node name="Hills2" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+position = Vector2(-1, 0)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Hills2"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Hills2/Control"]
+layout_mode = 1
+offset_left = 1242.22
+offset_right = 1882.22
+offset_bottom = 717.0
+size_flags_vertical = 0
+texture = ExtResource("3_rx8m4")
+
+[node name="Hills3" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Hills3"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Hills3/Control"]
+layout_mode = 1
+offset_left = 2591.11
+offset_top = 3.7037
+offset_right = 3231.11
+offset_bottom = 720.704
+size_flags_vertical = 0
+texture = ExtResource("3_rx8m4")
+
+[node name="Hills4" type="ParallaxLayer" parent="Node2D/ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 0)
+
+[node name="Control" type="Control" parent="Node2D/ParallaxBackground/Hills4"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(1.8, 1.35)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D/ParallaxBackground/Hills4/Control"]
+layout_mode = 1
+offset_left = 3843.89
+offset_top = 3.7037
+offset_right = 4483.89
+offset_bottom = 720.704
+size_flags_vertical = 0
+texture = ExtResource("3_rx8m4")
